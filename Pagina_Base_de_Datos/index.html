@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cartera de Clientes</title>
+<link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+<div class="container">
+
+
+<!-- MENÚ PRINCIPAL -->
+<div id="menu">
+<h1>Cartera de Clientes</h1>
+<button onclick="mostrarRegistro()">Registrar clientes</button>
+<button onclick="mostrarBusqueda()">Buscar clientes</button>
+</div>
+
+
+<!-- REGISTRO -->
+<div id="registro" class="oculto">
+<h2>Registrar Cliente</h2>
+<form id="clienteForm">
+<input type="text" id="nombre" placeholder="Nombre o Razón Social" required>
+<input type="text" id="dniRuc" placeholder="DNI o RUC" required>
+<input type="text" id="localidad" placeholder="Localidad" required>
+<input type="text" id="direccion" placeholder="Dirección" required>
+<input type="text" id="contacto" placeholder="Contacto" required>
+<input type="text" id="transporte" placeholder="Transporte" required>
+<input type="text" id="celular" placeholder="Celular" required>
+
+<input type="file" id="excelFile" accept=".xlsx" />
+<button onclick="importarExcel()">Importar Excel</button>
+
+<button type="submit">Guardar</button>
+</form>
+<button onclick="volverMenu()">Volver al menú</button>
+</div>
+
+
+<!-- BÚSQUEDA -->
+<div id="busqueda" class="oculto">
+<h2>Buscar Clientes</h2>
+<input type="text" id="filtro" placeholder="Filtrar por Nombre">
+<table>
+<thead>
+<tr>
+<th>Nombre/Razón Social</th>
+<th>DNI/RUC</th>
+<th>Localidad</th>
+<th>Dirección</th>
+<th>Contacto</th>
+<th>Transporte</th>
+<th>Celular</th>
+</tr>
+</thead>
+<tbody id="tabla"></tbody>
+</table>
+<button onclick="volverMenu()">Volver al menú</button>
+</div>
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
